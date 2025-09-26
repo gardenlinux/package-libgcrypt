@@ -1,0 +1,2 @@
+apt_src libgcrypt20
+apply_patches
