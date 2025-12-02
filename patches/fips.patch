@@ -1,14 +1,15 @@
+:100755 100755 5fe87f0 0000000 M	debian/rules
+
 diff --git a/debian/rules b/debian/rules
-index 5fe87f0..aac0e53 100755
+index 5fe87f0..523fe3f 100755
 --- a/debian/rules
 +++ b/debian/rules
-@@ -20,2 +20,5 @@ override_dh_auto_configure:
+@@ -20,2 +20,4 @@ override_dh_auto_configure:
  	dh_auto_configure --verbose --builddirectory=build -- \
 +		--disable-doc \
 +		--with-fips-module-version=3 \
-+		--disable-doc \
  		--enable-noexecstack \
-@@ -64,6 +67,2 @@ override_dh_installinfo:
+@@ -64,6 +66,2 @@ override_dh_installinfo:
  	dh_installinfo
 -	if test -e debian/libgcrypt20-doc ; then \
 -		cd debian/libgcrypt20-doc/usr/share/info && \
