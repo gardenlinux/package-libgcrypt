@@ -1,3 +1,14 @@
-apt_src libgcrypt20
+apt-get install -y --no-install-recommends curl ca-certificates
+
+curl -sSLf https://www.gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.11.2.tar.gz \
+| gunzip -c \
+| tee "$dir/orig.tar" \
+| tar --extract --strip-components 1 --directory "$dir/src"
+
+salsadir="$(mktemp -d)"
+git clone --depth 1 --branch 1.11.2-3 https://salsa.debian.org/gnutls-team/libgcrypt.git "$salsadir"
+mv "$salsadir/debian" "$dir/src"
+rm -rf "$salsadir"
+
 apply_patches
 version_suffix="gl2~bp1877"
