@@ -7,7 +7,7 @@ index 5fe87f0..050bfd4 100755
 @@ -20,2 +20,4 @@ override_dh_auto_configure:
  	dh_auto_configure --verbose --builddirectory=build -- \
 +		--disable-doc --enable-pubkey-ciphers="dsa elgamal rsa ecc" --enable-digests="crc gostr3411-94 rmd160 sha256 sha512 sha3 tiger whirlpool stribog blake2" \
-+		--with-fips-module-version=SAP SE Garden Linux nightly Libgcrypt Cryptographic Module \
++		--with-fips-module-version="SAP SE Garden Linux nightly Libgcrypt Cryptographic Module" \
  		--enable-noexecstack \
 @@ -62,9 +64,2 @@ override_dh_auto_install-arch:
  
