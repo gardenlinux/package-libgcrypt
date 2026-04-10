@@ -11,4 +11,4 @@ mv "$salsadir/debian" "$dir/src"
 rm -rf "$salsadir"
 
 apply_patches
-version_suffix="gl2~bp1877"
+version_suffix="gl3~bp1877"
